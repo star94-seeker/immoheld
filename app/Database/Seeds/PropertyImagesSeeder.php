@@ -9,20 +9,19 @@ class PropertyImagesSeeder extends Seeder
 {
     public function run()
     {
-        $propertyModel = new PropertyModel();
-        $properties = $propertyModel->selectAll();
+        $properties = $this->db->query("SELECT id FROM properties WHERE status = 1")->getResultArray();
         $data = [];
-        foreach($properties as $property)
-        {
+
+        foreach ($properties as $property) {
             $image_data = [
                 'property_id' => $property['id'],
-                'image_name' => 'image'.$property['id'].'.jpg',
+                'image_name' => 'image.jpg',
                 'is_main' => 1,
-                ];
+            ];
 
             array_push($data, $image_data);
         }
-        // Using Query Builder
+
         $this->db->table('property_images')->insertBatch($data);
     }
 }

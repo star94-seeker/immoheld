@@ -3,7 +3,7 @@
         <div class="card-box-a card-shadow">
             <div class="img-box-a">
 
-                <img src="assets/property_images/<?= !empty($property['image']) ? $property['image'] : 'image2.jpg' ?>" alt="" class="img-a img-fluid">
+                <img src="assets/property_images/<?= !empty($property['image']) ? $property['image'] : 'default-image.jpg' ?>" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
                 <div class="card-overlay-a-content">
